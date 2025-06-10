@@ -21,7 +21,7 @@
         }
         .bg-gradient-primary {
             background: linear-gradient(90deg, #facc15, #f59e0b); /* Yellow to Amber gradient */
-            color: #1a202c; /* Dark blue text on yellow button */
+            color: #1a202c; /* Dark text for contrast on yellow button */
         }
         .btn-primary {
             padding: 1rem 2.5rem;
@@ -75,6 +75,25 @@
         .animate-delay-1600 {
             animation-delay: 1.6s;
         }
+
+        /* Underline Animation for RTL - Adjusted for thicker, solid yellow */
+        .underline-animation {
+            position: relative;
+            display: inline-block;
+        }
+        .underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 6px; /* Thicker underline */
+            bottom: -8px; /* Slightly more distance from text */
+            right: 0; /* Start from right edge of text for RTL */
+            background-color: #facc15; /* Solid yellow color */
+            transition: width 0.4s ease-out; /* Animation duration */
+        }
+        .underline-animation:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body class="antialiased text-gray-800">
@@ -82,11 +101,11 @@
     <section class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center justify-center gap-12">
         <div class="flex-shrink-0 w-80 h-auto md:w-96 lg:w-[480px] rounded-lg shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out animate-fadeInUp">
             <!-- Ebook Cover Image -->
-            <img src="https://pbs.twimg.com/media/GtB0VFMW8AAb1kE?format=jpg&name=large" alt="غلاف الكتاب الإلكتروني: ملخص 50 كتابًا" class="w-full h-full object-cover">
+            <img src="https://i.ibb.co/C3GTfChx/cov.png" alt="غلاف الكتاب الإلكتروني: ملخص 50 كتابًا" class="w-full h-full object-cover">
         </div>
         <div class="text-center md:text-right max-w-2xl animate-fadeInUp animate-delay-200">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
-                <span class="text-gradient-yellow">هل تريد أن تأخذ فائدة الكتب دون الحاجة لقرائتها كاملةً؟</span>
+                <span class="text-gradient-yellow underline-animation">هل تريد أن تأخذ فائدة الكتب دون الحاجة لقرائتها كاملةً؟</span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
                 إذا كان جوابك نعم، فـ "ملخص 50 كتابًا في كتاب واحد" صُمم خصيصًا لك!
@@ -98,32 +117,32 @@
 
             <!-- Inside Book Look Image - NEW POSITION -->
             <div class="mt-12 text-center animate-fadeInUp animate-delay-400">
-                <h3 class="text-xl md:text-2xl font-bold mb-4 text-indigo-900">تصميم منسق ومريح للعين: نظرة من الداخل</h3>
-                <img src="https://static-content-dropify.com/kitabcaffe/products/karosyl-50-ktab_02_1743004624_4cf8b23f-426a-4b71-a168-0179edb2955d.webp" alt="نظرة داخل الكتاب الإلكتروني" class="w-full h-auto mx-auto rounded-lg shadow-xl max-w-lg">
+                <h3 class="text-xl md:text-2xl font-bold mb-4 text-orange-500">تصميم منسق ومريح للعين: نظرة من الداخل</h3>
+                <img src="https://static-content-dropify.com/kitabcaffe/products/karosyl-50-ktab_02_1743004624_4cf8b23f-426a-4b71-a168-0179edb2955d.webp" alt="نظرة داخل الكتاب الإلكتروني" class="w-full h-auto mx-auto rounded-lg shadow-xl max-w-lg opacity-75">
             </div>
         </div>
     </section>
 
     <!-- New Statistics Section - Rephrased for user benefit and including cost -->
     <section class="container mx-auto px-4 py-12 md:py-16">
-        <div class="bg-indigo-900 text-white p-8 md:p-10 rounded-lg shadow-xl mb-12 text-center animate-fadeInUp animate-delay-600">
-            <h3 class="text-2xl md:text-3xl font-bold mb-6 text-yellow-400">كم من الوقت والجهد سيوفر عليك هذا الكتاب؟</h3>
+        <div class="bg-amber-500 text-white p-8 md:p-10 rounded-lg shadow-xl mb-12 text-center animate-fadeInUp animate-delay-600">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6 text-orange-500">كم من الوقت والجهد سيوفر عليك هذا الكتاب؟</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xl md:text-2xl font-bold">
                 <div>
-                    <p class="text-yellow-200">الكلمات الملخصة التي لن تحتاج لقراءتها</p>
+                    <p class="text-white">الكلمات الملخصة التي لن تحتاج لقراءتها</p>
                     <p class="text-4xl sm:text-5xl lg:text-6xl">+565,000</p>
                 </div>
                 <div>
-                    <p class="text-yellow-200">الساعات التي ستوفرها من القراءة</p>
+                    <p class="text-white">الساعات التي ستوفرها من القراءة</p>
                     <p class="text-4xl sm:text-5xl lg:text-6xl">+565</p>
                 </div>
                 <div>
-                    <p class="text-yellow-200">الساعات التي وفرت عليك في التلخيص</p>
+                    <p class="text-white">الساعات التي وفرت عليك في التلخيص</p>
                     <p class="text-4xl sm:text-5xl lg:text-6xl">+1690</p>
                 </div>
             </div>
             <p class="text-lg mt-6 opacity-80">
-                لو قمت بشراء كل كتاب من هذه الكتب الـ 50 بشكل منفصل، سيكلفك ذلك <span class="font-bold text-yellow-200">أكثر من 2000 دولار!</span>
+                لو قمت بشراء كل كتاب من هذه الكتب الـ 50 بشكل منفصل، سيكلفك ذلك <span class="font-bold text-white">أكثر من 2000 دولار!</span>
             </p>
             <p class="text-lg mt-2 opacity-80">
                 كل هذا الجهد بُذل (أكثر من 2200 ساعة عمل!) لنوفر عليك آلاف الساعات ونمنحك المعرفة المركزة بين يديك، جاهزة للتطبيق الفوري!
@@ -144,20 +163,20 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center animate-fadeInUp animate-delay-1000">
                 <div class="text-gray-700 text-lg leading-relaxed">
                     <p class="mb-4">
-                        يحتوي الكتاب على <span class="font-bold text-indigo-900">385 صفحة</span> من الفائدة المركزة مع <span class="font-bold text-indigo-900">تصميم منسق ومريح للعين</span>، ليمنحك تجربة قراءة ممتعة.
+                        يحتوي الكتاب على <span class="font-bold text-orange-500">385 صفحة</span> من الفائدة المركزة مع <span class="font-bold text-orange-500">تصميم منسق ومريح للعين</span>، ليمنحك تجربة قراءة ممتعة.
                     </p>
                     <p class="mb-4">
-                        <span class="font-bold text-indigo-900">ملخص 50 كتاباً في كتاب واحد..</span> كتاب يختصر لك رحلة 50 كتاباً في 385 صفحة من الفائدة المركزة.
+                        <span class="font-bold text-orange-500">ملخص 50 كتاباً في كتاب واحد..</span> كتاب يختصر لك رحلة 50 كتاباً في 385 صفحة من الفائدة المركزة.
                     </p>
                     <p>
-                        <span class="font-bold text-indigo-900">ملاحظة:</span> بعد شراء ملخص 50 كتاباً في كتابٍ واحد سيتم ارساله لك عبر البريد الإلكتروني.
+                        <span class="font-bold text-orange-500">ملاحظة:</span> بعد شراء ملخص 50 كتاباً في كتابٍ واحد سيتم ارساله لك عبر البريد الإلكتروني.
                     </p>
                     <a href="#buy" class="btn-primary bg-gradient-primary text-xl mt-8 inline-block">
                         احصل على كل هذه الفائدة!
                     </a>
                 </div>
                 <div class="rounded-lg shadow-md p-6 bg-gray-50">
-                    <h3 class="text-2xl font-semibold mb-4 text-center text-indigo-900">قائمة بملخصات الكتب التي يحتوي عليها هذا الكتاب: ⤵️</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-orange-500">قائمة بملخصات الكتب التي يحتوي عليها هذا الكتاب: ⤵️</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-700 text-base">
                         <ul class="space-y-1">
                             <li>- كتاب لا تهتم بصغائر الامور</li>
@@ -221,7 +240,7 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section id="buy" class="bg-indigo-900 py-16 md:py-24 text-white text-center animate-fadeInUp animate-delay-1200">
+    <section id="buy" class="bg-amber-500 py-16 md:py-24 text-white text-center animate-fadeInUp animate-delay-1200">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-yellow-400">
                 لا تفوت الفرصة!
